@@ -24,7 +24,19 @@ const Login = () => {
     }
 
     const handleSignup = (e) => {
+        e.preventDefault()
+        const formData = new FormData(e.target)
 
+        const {username, email, password} = Object.fromEntries(formData)
+
+        // console.log(username, email, password);
+
+        try {
+            
+        } catch (error) {
+            console.error(error)
+            toast.error(error.message)
+        }
     }
 
 
