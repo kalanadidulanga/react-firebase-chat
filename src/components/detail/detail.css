@@ -102,6 +102,10 @@
             &.logout{
                 background-color: #1a73e8;
                 padding: 10px;
+
+                &:hover{
+                    background-color: #1a73e8bc;
+                }
             }
         }
     }
