@@ -7,6 +7,12 @@ const Chat = () => {
   const [text, setText] = useState("")
   const emojiRef = useRef(null)
 
+  const endRef = useRef(null)
+
+  useEffect(() => {
+    endRef.current?.scrollIntoView({ behavior: "smooth" })
+  }, [])
+
   const handleEmoji = (e) => {
     setText(prev => prev + e.emoji)
   }
@@ -58,7 +64,7 @@ const Chat = () => {
         <div className="message">
           <img src="./avatar.png" alt="" />
           <div className="texts">
-          <img src={"https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp"} alt="" />
+            <img src={"https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp"} alt="" />
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, voluptatem?</p>
             <span>1 min ago</span>
           </div>
@@ -83,6 +89,8 @@ const Chat = () => {
             <span>1 min ago</span>
           </div>
         </div>
+
+        <div ref={endRef}></div>
       </div>
 
       <div className="bottom">
